@@ -4,8 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Mensagem {
-    
-
 
     private String mensagem;
 
@@ -16,4 +14,5 @@ public class Mensagem {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
+    
 }

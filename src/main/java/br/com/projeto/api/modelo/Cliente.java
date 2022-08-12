@@ -5,37 +5,42 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "pessoas")
-public class Pessoa {
+@Table(name = "clientes")
+public class Cliente {
 
     // Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
+
+    @NotEmpty(message = "Informe um nome")
     private String nome;
-    private int idade;
-    
+
+    @Email(message = "Informe um e-mail válido")
+    private String email;
+
     // Get e Set
-    public String getNome() {
-        return nome;
-    }
     public int getCodigo() {
         return codigo;
     }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public String getEmail() {
+        return email;
     }
-    public int getIdade() {
-        return idade;
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public String getNome() {
+        return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
     
 }
